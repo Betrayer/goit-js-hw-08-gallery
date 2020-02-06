@@ -41,6 +41,6 @@ button.addEventListener("click", closeImg);
 function closeImg(e) {
   if (e.target.classList.contains("lightbox__button")) {
     lightbox.classList.toggle("is-open");
-    lightbox.removeEventListener(mouseClick, closeImg);
   }
+  button.removeEventListener(closeImg);
 }

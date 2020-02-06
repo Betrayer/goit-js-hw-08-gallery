@@ -34,13 +34,12 @@ function mouseClick(e) {
     lightbox.classList.toggle("is-open");
     lightboxImg.src = e.target.dataset.source;
   }
+  button.addEventListener("click", closeImg);
 }
-
-button.addEventListener("click", closeImg);
 
 function closeImg(e) {
   if (e.target.classList.contains("lightbox__button")) {
     lightbox.classList.toggle("is-open");
   }
-  button.removeEventListener(closeImg);
+  button.removeEventListener("click", closeImg);
 }

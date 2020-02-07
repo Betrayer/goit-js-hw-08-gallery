@@ -4,7 +4,7 @@ import images from "./gallery-items.js";
 
 const element = document.querySelector(".gallery");
 const lightbox = document.querySelector(".lightbox");
-const button = document.querySelector(".lightbox__button");
+// const button = document.querySelector(".lightbox__button");
 const lightboxImg = document.querySelector(".lightbox__image");
 
 const imgList = images.reduce(
@@ -36,7 +36,7 @@ function mouseClick(e) {
     lightboxImg.setAttribute("src", e.target.dataset.source);
     // button.addEventListener("click", closeImg);
     document.addEventListener("keydown", closeModal);
-    lightbox.addEventListener("click", smth);
+    lightbox.addEventListener("click", closeModalByClick);
   }
 }
 
@@ -48,7 +48,7 @@ function mouseClick(e) {
 //   button.removeEventListener("click", closeImg);
 // }
 
-function smth(e) {
+function closeModalByClick(e) {
   if (!e.target.classList.contains("lightbox__image")) {
     lightbox.classList.remove("is-open");
     lightboxImg.removeAttribute("src");
@@ -64,3 +64,4 @@ function closeModal(e) {
     // button.removeEventListener("click", closeImg);
   }
 }
+ 
